@@ -84,6 +84,8 @@ Unified-Military-Analytics/
 ├── dashboard application prototype with link.pdf
 ├── Quick Stats.twbx
 ├── Nation Overview.twbx
+|
+├── global_military_firepower_2025.twbx
 │
 ├── README.md
 └── requirements.txt
