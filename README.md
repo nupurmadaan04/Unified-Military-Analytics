@@ -1,64 +1,97 @@
 # Unified Military Analytics
 
-A data engineering and analytics pipeline that collects, cleans, and structures global military statistics from **Global Firepower** to create an analysis-ready dataset for interactive dashboards and military intelligence visualization.
+An end-to-end data engineering and analytics pipeline that collects, cleans, enriches, analyzes, and visualizes global military statistics from **Global Firepower** to create an interactive military intelligence analytics platform.
+
+The project combines **Python-based web scraping, data preprocessing, feature engineering, Tableau visualization, interactive dashboard development, testing, documentation, and GitHub-based project delivery**.
 
 ---
 
 ## Overview
 
-Unified Military Analytics is designed to automate the collection and preprocessing of global military data. The project extracts military, economic, infrastructure, manpower, and geographical indicators from multiple Global Firepower pages, transforms the raw data into a standardized dataset, and prepares it for visualization and analytical applications.
+**Unified Military Analytics** is designed to transform publicly available global military data into a structured, analysis-ready dataset and an interactive visualization platform.
 
-The project follows a modular data engineering and analytics pipeline consisting of data collection, preprocessing, feature engineering, dashboard planning, and interactive visualization using Tableau.
+The system collects country-wise military, manpower, economic, infrastructure, natural resource, and geographical indicators from multiple Global Firepower pages. The collected information is processed through a modular data engineering pipeline involving:
+
+- Automated web scraping
+- Data cleaning and preprocessing
+- Data enrichment
+- KPI and feature engineering
+- Tableau data preparation
+- Interactive dashboard development
+- Testing and debugging
+- Documentation and GitHub release
+
+The final system allows users to explore global military capabilities through four major interactive dashboards:
+
+1. **Quick Stats**
+2. **Nation Overview**
+3. **Compare Powers**
+4. **Coalition Builder**
 
 ---
 
-## Project Objectives
+# Project Objectives
 
-* Automate military data collection from multiple Global Firepower sources.
-* Consolidate country-wise metrics into a single dataset.
-* Clean and standardize raw data.
-* Produce an analysis-ready dataset for Tableau dashboards.
-* Build a scalable data pipeline for future analytics and machine learning applications.
+The major objectives of Unified Military Analytics are:
+
+- Automate military data collection from publicly available sources.
+- Consolidate country-wise military statistics into a unified dataset.
+- Clean and standardize raw web-scraped data.
+- Integrate military information with economic and regional metadata.
+- Generate meaningful analytical KPIs.
+- Develop interactive Tableau dashboards.
+- Enable dynamic country-to-country comparison.
+- Enable multi-country coalition analysis.
+- Validate dashboard calculations, filters, parameters, and navigation.
+- Maintain a clean and documented GitHub repository.
+- Provide a shareable and portfolio-ready analytics solution.
 
 ---
 
 # Project Architecture
 
 ```text
-Global Firepower
-        │
-        ▼
-Module 1
-Data Collection & Web Scraping
-        │
-        ▼
-Raw Military Dataset
-        │
-        ▼
-Module 2
-Data Cleaning & Structuring
-        │
-        ▼
-Clean Military Dataset
-        │
-        ▼
-Module 3
-KPI Feature Engineering
-        │
-        ▼
-Tableau Ready Dataset
-        │
-        ▼
-Module 4
-Dashboard Planning & Prototyping
-        │
-        ▼
-Tableau Dashboard Development
-        │
-        ▼
-Military Analytics
-```
-
+                         Global Firepower
+                                │
+                                ▼
+              Module 1: Data Collection & Scraping
+                                │
+                                ▼
+                       Raw Military Data
+                                │
+                                ▼
+              Module 2: Cleaning & Structuring
+                                │
+                                ▼
+                     Clean Military Data
+                                │
+                                ▼
+               Module 3: KPI Feature Engineering
+                                │
+                                ▼
+                 Tableau-Ready Dataset
+                                │
+                                ▼
+               Module 4: Dashboard Planning
+                                │
+                                ▼
+              Module 5: Quick Stats & Nation
+                         Overview
+                                │
+                                ▼
+             Module 6: Compare Powers &
+                       Coalition Builder
+                                │
+                                ▼
+                Module 7: Testing & QA
+                                │
+                                ▼
+             Module 8: Documentation &
+                    GitHub Release
+                                │
+                                ▼
+              Interactive Military Analytics
+                         Platform
 ---
 
 # Project Structure
@@ -66,22 +99,38 @@ Military Analytics
 ```text
 Unified-Military-Analytics/
 │
-├── military_raw_data.csv
-├── military_cleaned.csv
-├── military_final.xlsx
-├── military_long.xlsx
+├── data/
+│   │
+│   ├── military_raw_data.csv
+│   ├── military_cleaned.csv
+│   ├── military_final.xlsx
+│   └── military_long.xlsx
 │
-├── scrape_military_metrics.ipynb
-├── clean_data.ipynb
-├── generate_kpis.py
+├── scripts/
+│   │
+│   ├── scrape_military_metrics.ipynb
+│   ├── clean_data.ipynb
+│   └── generate_kpis.py
 │
-├── Storyboard for dashboard layouts.pdf
-├── dashboard application prototype with link.pdf
-├── Quick Stats.twbx
-├── Nation Overview.twbx
+├── dashboard/
+│   │
+│   ├── Quick Stats.twbx
+│   ├── Nation Overview.twbx
+│   ├── Compare Powers.twbx
+│   ├── Coalition Builder.twbx
+│   └── global_military_firepower_2025.twbx
 │
+├── docs/
+│   │
+│   ├── Storyboard for dashboard layouts.pdf
+│   ├── dashboard application prototype with link.pdf
+│   ├── Dashboard_Usage_Guide.md
+│   └── QA_Checklist.md
+│
+├── links_for_military_data.txt
+├── requirements.txt
 ├── README.md
-└── requirements.txt
+└── LICENSE
 ```
 
 ---
@@ -426,39 +475,11 @@ dashboard application prototype with link.pdf
 
 ---
 
----
-
 # Module 5: Quick Stats & Nation Overview Dashboard Development
 
 ## Objective
 
 Develop interactive Tableau dashboards that enable users to explore global military capabilities through dynamic KPIs, country profiles, filters, and analytical visualizations.
-
----
-
-## Features
-
-### Quick Stats Dashboard
-
-- Top 10 Countries by Global Firepower Power Index
-- Dynamic KPI Cards
-- Region Filter
-- Continent Filter
-- NATO Alliance Filter
-- Interactive Dashboard Visualizations
-
-### Nation Overview Dashboard
-
-- Country Selection Filter
-- Dynamic Country Profile
-- Global Firepower Rank
-- Power Index
-- GDP
-- Defense Budget
-- Population
-- Military Assets Visualization
-- Military Manpower Visualization
-- Interactive Tooltips
 
 ---
 
@@ -497,13 +518,8 @@ Develop interactive Tableau dashboards that enable users to explore global milit
 ## Output Files
 
 ```text
-global_military_firepower_2025.twbx
-```
-
-or
-
-```text
-Tableau Public Dashboard
+Quick Stats.twbx
+Nation Overview.twbx
 ```
 
 ---
@@ -518,33 +534,332 @@ Tableau Public Dashboard
 
 ---
 
-# Dataset Pipeline
+# Module 6: Compare Powers & Coalition Builder Dashboard Development
 
-## Dataset Pipeline
+## Objective
+
+Develop advanced comparative analytics dashboards in Tableau that enable users to compare military capabilities between two nations and simulate coalition strength by aggregating the combined military resources of multiple countries.
+
+---
+
+## Features
+
+### Compare Powers Dashboard
+
+- Side-by-side comparison of two selected countries
+- Dynamic Country A and Country B selectors
+- KPI comparison cards
+- Military capability comparison
+- Economic strength comparison
+- Interactive parameter-based filtering
+- Country-wise military asset comparison
+
+### Coalition Builder Dashboard
+
+- Multi-country coalition simulation
+- Interactive country selection
+- Coalition military asset aggregation
+- Combined population analysis
+- Combined defense budget analysis
+- Combined manpower analysis
+- Coalition aircraft and naval fleet analysis
+- Reference country comparison
+- Coalition strength evaluation
+
+---
+
+## Dashboard Components
+
+### Compare Powers
+
+- Country A Selector
+- Country B Selector
+- Population Comparison
+- Global Firepower Rank Comparison
+- Power Index Comparison
+- GDP Comparison
+- Defense Budget Comparison
+- Military Manpower Comparison
+- Aircraft Comparison
+- Naval Fleet Comparison
+- Economic Strength Indicator
+
+---
+
+### Coalition Builder
+
+- Coalition Country Selector
+- Coalition Countries List
+- Coalition Population
+- Coalition Defense Budget
+- Coalition Military Manpower
+- Coalition Aircraft
+- Coalition Naval Fleet
+- Reference Country Selector
+- Coalition vs Reference Comparison
+
+---
+
+## Interactive Features
+
+### Compare Powers
+
+- Dynamic parameter-based country selection
+- Automatic KPI updates
+- Independent Country A and Country B comparison
+- Responsive dashboard interactions
+
+### Coalition Builder
+
+- Multi-country filtering
+- Automatic aggregation of coalition metrics
+- Reference country selection
+- Coalition strength comparison
+- Interactive Tableau filters
+
+---
+
+## Deliverables
+
+- Compare Powers Dashboard
+- Coalition Builder Dashboard
+- Interactive Tableau Workbook
+- Tableau Public Dashboard
+
+---
+
+## Output Files
 
 ```text
+global_military_firepower_2025.twbx
+```
+
+---
+
+## Technologies Used
+
+- Tableau Desktop
+- Tableau Public
+- Interactive Dashboard Design
+- Parameter Actions
+- Dashboard Filters
+- Calculated Fields
+- Aggregate Analytics
+
+---
+
+## Key Metrics Compared
+
+### Compare Powers
+
+- Global Firepower Rank
+- Power Index
+- Population
+- GDP
+- Defense Budget
+- Military Manpower
+- Aircraft Count
+- Naval Fleet
+- Economic Strength
+
+### Coalition Builder
+
+- Coalition Population
+- Coalition Defense Budget
+- Coalition Military Manpower
+- Coalition Aircraft
+- Coalition Naval Fleet
+- Coalition Countries
+- Reference Country Metrics
+- Coalition vs Reference Analysis
+
+---
+
+# Module 7: Testing & Debugging
+
+## Objective
+
+Perform comprehensive quality assurance testing on all Tableau dashboards to ensure data accuracy, interactive functionality, navigation, and overall dashboard usability before final deployment.
+
+---
+
+## Features
+
+- End-to-end dashboard testing
+- Filter validation
+- Parameter validation
+- Navigation testing
+- KPI verification
+- Manual data validation
+- Layout optimization
+- Tooltip verification
+- Performance testing
+- Tableau Public/Desktop compatibility testing
+
+---
+
+## Testing Performed
+
+### Dashboard Validation
+
+#### Quick Stats
+
+- Verified Region filter
+- Verified Continent filter
+- Verified NATO filter
+- Validated KPI cards
+- Verified Top 10 Countries visualization
+- Verified Defense Budget chart
+- Verified Assets per Capita chart
+
+---
+
+#### Nation Overview
+
+- Verified Country selector
+- Validated country profile information
+- Verified GDP values
+- Verified Defense Budget values
+- Verified Population statistics
+- Verified Military Assets visualization
+- Verified Personnel visualization
+
+---
+
+#### Compare Powers
+
+- Verified Country A parameter
+- Verified Country B parameter
+- Validated comparative KPIs
+- Verified side-by-side comparison
+- Tested interactive parameter updates
+
+---
+
+#### Coalition Builder
+
+- Verified multi-country coalition selection
+- Verified coalition aggregation
+- Validated reference country selection
+- Tested coalition vs reference comparison
+- Verified aggregated coalition metrics
+
+---
+
+## Quality Assurance
+
+### Functional Testing
+
+- Dashboard filters validated
+- Parameters validated
+- Navigation validated
+- Interactive actions verified
+
+---
+
+### Data Validation
+
+- Manual spot checks performed
+- KPI calculations verified
+- Aggregated values validated
+- Source dataset cross-checked
+
+---
+
+### UI/UX Validation
+
+- Dashboard layouts aligned
+- Labels verified
+- Tooltips validated
+- Consistent styling maintained
+- Responsive dashboard behavior confirmed
+
+---
+
+### Performance Testing
+
+- Workbook tested in Tableau Desktop
+- Workbook tested in Tableau Public
+- Dashboard loading verified
+- Interactive performance validated
+
+---
+
+## Deliverables
+
+- Debugged Tableau Workbook
+- QA Checklist
+- Verified Interactive Dashboards
+
+---
+
+## Output Files
+
+```text
+global_military_firepower_2025.twbx
+QA_Checklist.md
+```
+
+---
+
+## Technologies Used
+
+- Tableau Desktop
+- Tableau Public
+- Dashboard Testing
+- Manual QA
+- Data Validation
+
+---
+
+# Dataset Pipeline
+
+```text
+Global Firepower
+       │
+       ▼
 Web Scraping
-      │
-      ▼
+       │
+       ▼
 Raw Dataset
-      │
-      ▼
+       │
+       ▼
 Data Cleaning
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Tableau Ready Dataset
-      │
-      ▼
-Dashboard Planning
-      │
-      ▼
+       │
+       ▼
+Data Structuring
+       │
+       ▼
+Economic & Regional Enrichment
+       │
+       ▼
+KPI / Feature Engineering
+       │
+       ▼
+Tableau-Ready Dataset
+       │
+       ▼
 Dashboard Development
-      │
-      ▼
-Interactive Military Analytics
+       │
+       ├───────────────┐
+       ▼               ▼
+ Quick Stats     Nation Overview
+       │               │
+       └───────┬───────┘
+               ▼
+        Compare Powers
+               │
+               ▼
+       Coalition Builder
+               │
+               ▼
+       Testing & Debugging
+               │
+               ▼
+      Documentation & Release
+               │
+               ▼
+        GitHub Repository
 ```
 
 ---
@@ -577,19 +892,31 @@ Interactive Military Analytics
 
 - Quick Stats Dashboard
 - Nation Overview Dashboard
-- Tableau Workbook
-- Interactive Tableau Dashboard
 
-# Future Modules
+## Module 6
 
 - Compare Powers Dashboard
 - Coalition Builder Dashboard
-- Dashboard Integration & Navigation
-- Time-series Military Trends
-- Predictive Military Intelligence
-- Machine Learning Models
-- REST API Integration
-- Web Deployment
+- Interactive Country Comparison
+- Coalition Strength Simulation
+- Reference Country Comparison
+
+## Module 7
+
+- Debugged Tableau Workbook
+- QA Checklist
+- Verified Interactive Dashboards
+
+--- 
+
+# Future Enhancements
+
+- Real-time military data integration
+- Time-series military trend analysis
+- Machine Learning based military capability prediction
+- REST API integration
+- Web deployment using Tableau Embedded Analytics
+- Automated data refresh pipeline
 
 ---
 
@@ -627,6 +954,166 @@ This project is developed for educational, research, and analytical purposes. Al
 
 ---
 
+# Dashboard Usage Guidance
+
+The Unified Military Analytics platform consists of four interactive Tableau dashboards. Each dashboard is designed for a specific analytical purpose and uses filters, parameters, calculated fields, and dashboard actions to support interactive exploration.
+
+---
+
+## 1. Quick Stats Dashboard
+
+### Purpose
+
+The Quick Stats dashboard provides a high-level overview of global military capabilities and economic indicators.
+
+### How to Use
+
+1. Open the Quick Stats dashboard in Tableau Desktop or Tableau Public.
+2. Use the available filters to narrow the dataset.
+3. Select a specific region, continent, or NATO membership category.
+4. Observe the KPI cards update dynamically.
+5. Explore the Top 10 Military Powers visualization.
+6. Hover over charts and marks to view detailed tooltips.
+7. Clear the filters to return to the complete dataset.
+
+### Main Features
+
+- Total Countries
+- Average Power Index
+- Total Defense Budget
+- Average GDP
+- Top Military Powers
+- Assets per Capita
+- NATO Distribution
+- Region-wise analysis
+- Continent-wise analysis
+
+---
+
+## 2. Nation Overview Dashboard
+
+### Purpose
+
+The Nation Overview dashboard provides a detailed profile of a selected country.
+
+### How to Use
+
+1. Open the Nation Overview dashboard.
+2. Select a country using the Country filter.
+3. The country profile updates automatically.
+4. Review the country's military, economic, manpower, and population indicators.
+5. Hover over charts to view detailed values.
+6. Change the selected country to compare different country profiles.
+
+### Main Features
+
+- Country Name
+- Global Firepower Rank
+- Power Index
+- GDP
+- Defense Budget
+- Population
+- Military Manpower
+- Military Assets
+- Aircraft
+- Naval Assets
+- Economic Indicators
+
+---
+
+## 3. Compare Powers Dashboard
+
+### Purpose
+
+The Compare Powers dashboard enables users to compare two selected countries using common military and economic indicators.
+
+### How to Use
+
+1. Select **Country A** using the Country A parameter.
+2. Select **Country B** using the Country B parameter.
+3. The comparison automatically updates.
+4. Review the KPI cards and comparison charts.
+5. Change either country to perform another comparison.
+6. Hover over the visualizations to inspect individual values.
+
+### Main Comparison Parameters
+
+- Global Firepower Rank
+- Power Index
+- Population
+- GDP
+- Defense Budget
+- Military Manpower
+- Aircraft
+- Naval Fleet
+- Economic Strength
+- Selected Military Assets
+
+### Comparison Logic
+
+Each selected country is evaluated independently using the same set of indicators.
+
+```text
+Country A Metrics
+       │
+       ├── Military Indicators
+       ├── Economic Indicators
+       └── Manpower Indicators
+
+Country B Metrics
+       │
+       ├── Military Indicators
+       ├── Economic Indicators
+       └── Manpower Indicators
+
+              ↓
+
+       Side-by-Side Comparison
+
+```
+
+---
+
+# GitHub Release Structure
+
+The final repository is organized into separate directories for datasets, scripts, dashboards, and documentation.
+
+```text
+Unified-Military-Analytics/
+│
+├── data/
+│   ├── military_raw_data.csv
+│   ├── military_cleaned.csv
+│   ├── military_final.xlsx
+│   └── military_long.xlsx
+│
+├── scripts/
+│   ├── scrape_military_metrics.ipynb
+│   ├── clean_data.ipynb
+│   └── generate_kpis.py
+│
+├── dashboard/
+│   ├── Quick Stats.twbx
+│   ├── Nation Overview.twbx
+│   ├── Compare Powers.twbx
+│   ├── Coalition Builder.twbx
+│   └── global_military_firepower_2025.twbx
+│
+├── docs/
+│   ├── Storyboard for dashboard layouts.pdf
+│   ├── dashboard application prototype with link.pdf
+│   ├── Dashboard_Usage_Guide.md
+│   └── QA_Checklist.md
+│
+├── links_for_military_data.txt
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
+
+---
+
+
 # Acknowledgements
 
 * Global Firepower
@@ -634,4 +1121,3 @@ This project is developed for educational, research, and analytical purposes. Al
 * Pandas
 * BeautifulSoup
 * Requests
-y-Analytics
