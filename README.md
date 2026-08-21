@@ -92,6 +92,8 @@ The major objectives of Unified Military Analytics are:
                                 ▼
               Interactive Military Analytics
                          Platform
+
+```
 ---
 
 # Project Structure
@@ -812,6 +814,60 @@ QA_Checklist.md
 
 ---
 
+# Module 8: Documentation & GitHub Release
+
+## Objective
+
+Finalize the Unified Military Analytics project by documenting the complete data pipeline, organizing project files, preparing dashboard usage guidance, and releasing the final project through GitHub.
+
+---
+
+## Documentation Steps
+
+### Final README
+
+Document:
+
+* Project overview
+* Project objectives
+* Project architecture
+* Data pipeline
+* Scraping methodology
+* Data cleaning process
+* KPI definitions
+* Dashboard modules
+* Technologies used
+* Installation and usage information
+
+---
+
+### Dashboard Usage Guide
+
+Provide instructions for using:
+
+* Quick Stats Dashboard
+* Nation Overview Dashboard
+* Compare Powers Dashboard
+* Coalition Builder Dashboard
+* Filters and parameters
+* Country selectors
+* Dashboard navigation
+* Interactive charts and tooltips
+
+---
+
+### Repository Organization
+
+Organize the final project into structured directories:
+
+```text
+data/
+scripts/
+dashboard/
+docs/
+```
+
+---
 # Dataset Pipeline
 
 ```text
@@ -907,6 +963,12 @@ Dashboard Development
 - QA Checklist
 - Verified Interactive Dashboards
 
+## Module 8
+
+- README.md
+- docs/Dashboard_Usage_Guide.md
+- Documentation
+  
 --- 
 
 # Future Enhancements
@@ -953,6 +1015,113 @@ Dashboard storyboard and prototype created during Module 4.
 This project is developed for educational, research, and analytical purposes. All data belongs to its respective source and is used in accordance with publicly available information.
 
 ---
+
+## Scraping Method
+
+The project collects country-wise military, economic, manpower, infrastructure, natural resource, and geographical statistics from publicly available **Global Firepower** pages.
+
+The scraping pipeline is implemented using Python and follows these steps:
+
+```text
+Global Firepower Pages
+        ↓
+HTTP Requests
+        ↓
+HTML Response
+        ↓
+BeautifulSoup Parsing
+        ↓
+Metric Extraction
+        ↓
+Country-wise Data
+        ↓
+Unified Raw Dataset
+```
+
+---
+
+
+### Scraping Process
+
+1. Source URLs are maintained for the required Global Firepower pages.
+2. Python requests is used to retrieve webpage content.
+3. BeautifulSoup parses the HTML structure.
+4. Required military metrics are extracted from the webpages.
+5. Country names are used to merge data collected from different sources.
+6. Extracted values are standardized and stored in a unified dataset.
+7. The raw dataset is exported for further cleaning and processing.
+
+## Output
+``` military_raw_data.csv ```
+
+The raw dataset is then passed to the data-cleaning module before KPI generation and Tableau visualization.
+
+---
+
+## KPI Definitions
+
+The final analytical dataset contains military, economic, manpower, regional, and derived indicators.
+
+### Power Index Rank Gap
+
+Measures the difference between economic ranking and military ranking.
+
+Formula:
+
+```
+Power Index Rank Gap = GDP Rank - Global Firepower Rank
+```
+
+---
+
+### Assets per Capita
+
+Measures military asset availability relative to population size.
+
+Formula:
+
+```
+Assets per Capita = Total Military Assets / Total Population
+```
+
+---
+
+### Budget-to-GDP Ratio
+
+Measures defense spending intensity relative to national GDP.
+
+Formula:
+
+```
+Budget-to-GDP Ratio = (Defense Budget / GDP) × 100
+```
+
+---
+
+## How to Open the Tableau Dashboards
+
+The project contains four interactive Tableau dashboards:
+
+1. Quick Stats
+2. Nation Overview
+3. Compare Powers
+4. Coalition Builder
+
+The Tableau workbooks are stored inside the:
+
+```dashboard/```
+
+directory.
+
+## Opening the Workbooks
+Using Tableau Desktop
+
+- Install and open Tableau Desktop.
+- Navigate to the project's dashboard/ directory.
+- Open the required .twbx workbook.
+- Allow Tableau to load the packaged data source.
+- Open the required dashboard from the workbook.
+- Use the available filters, parameters, and dashboard actions.
 
 # Dashboard Usage Guidance
 
@@ -1049,6 +1218,32 @@ The Compare Powers dashboard enables users to compare two selected countries usi
 - Economic Strength
 - Selected Military Assets
 
+## 4. Coalition Builder Dashboard
+
+### Purpose
+
+The Coalition Builder allows users to select multiple countries and analyze their combined capabilities.
+
+### How to Use
+
+1. Select multiple countries using the Coalition Country selector.
+2. The selected countries form the coalition.
+3. Tableau automatically calculates aggregated coalition metrics.
+4. Select a Reference Country.
+5. Compare the coalition against the selected reference country.
+6. Review the difference using KPI cards and comparison visualizations.
+7. Reference Country Metrics
+
+### Coalition Aggregation
+
+Additive metrics are aggregated using the selected countries.
+
+---
+
+### GitHub Release Structure
+
+The final repository is organized into separate directories for datasets, scripts, dashboards, and documentation.
+
 ### Comparison Logic
 
 Each selected country is evaluated independently using the same set of indicators.
@@ -1074,7 +1269,7 @@ Country B Metrics
 
 ---
 
-# GitHub Release Structure
+## GitHub Release Structure
 
 The final repository is organized into separate directories for datasets, scripts, dashboards, and documentation.
 
@@ -1113,6 +1308,92 @@ Unified-Military-Analytics/
 
 ---
 
+## GitHub Release Structure
+
+The final release follows a structured development and version-control workflow.
+
+```text
+Development Completed
+        │
+        ▼
+Dashboard Testing
+        │
+        ▼
+Data Validation
+        │
+        ▼
+QA Checklist
+        │
+        ▼
+Documentation
+        │
+        ▼
+Repository Organization
+        │
+        ▼
+README Finalization
+        │
+        ▼
+Git Add
+        │
+        ▼
+Git Commit
+        │
+        ▼
+Git Push
+        │
+        ▼
+GitHub Final Release
+```
+---
+
+## Optional Tableau Public Release
+
+The completed Tableau workbook can optionally be published on Tableau Public to make the project accessible as an online portfolio demonstration.
+Tableau Public Dashboard: <https://public.tableau.com/app/profile/nupur.madaan/viz/UnifiedMilitaryAnalyticsandComparisonDashboard/QuickStats?publish=yes>
+
+```text
+Final Tableau Workbook
+        │
+        ▼
+QA Testing
+        │
+        ▼
+Verify Filters & Parameters
+        │
+        ▼
+Verify Dashboard Navigation
+        │
+        ▼
+Verify Data Values
+        │
+        ▼
+Publish to Tableau Public
+        │
+        ▼
+Generate Public Dashboard Link
+        │
+        ▼
+Add Link to GitHub README
+```
+
+---
+## Technology Stack 
+| Area                  | Technology / Tool            |
+| --------------------- | ---------------------------- |
+| Programming Language  | Python                       |
+| Web Scraping          | Requests, BeautifulSoup      |
+| Data Processing       | Pandas, NumPy                |
+| Development           | Jupyter Notebook             |
+| Data Storage          | CSV, Excel                   |
+| Data Visualization    | Tableau Desktop              |
+| Dashboard Publishing  | Tableau Public               |
+| Dashboard Interaction | Parameters, Filters, Actions |
+| Data Transformation   | Pandas, Calculated Fields    |
+| Documentation         | Markdown                     |
+| Version Control       | Git                          |
+| Repository            | GitHub                       |
+| Data Source           | Global Firepower             |
 
 # Acknowledgements
 
